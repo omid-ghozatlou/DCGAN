@@ -214,7 +214,7 @@ for epoch in range(opt.n_epochs):
             fourier = torch.view_as_complex(torch.stack((real, imag), dim=-1))
 
             spatial[i] = torch.fft.ifft2(fourier).real
-        spatial = ((spatial+1)/2)
+        # spatial = ((spatial+1)/2)
         # print(spatial.min())
         g_loss.backward()
         optimizer_G.step()
